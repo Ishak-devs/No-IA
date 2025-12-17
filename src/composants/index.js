@@ -1,10 +1,26 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function Index() {
-const [state, setState] = useState('')
+function DataFetchingComponent() {
+  const [data, setData] = useState([]);
 
-    fetch("/home/ishak/e-commerce-0-ia/traitement/index.java")
-      
-  }
+  useEffect(() => {
+    axios.get('traitement/index.java')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-export default Index;
+  return (
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+  );
+}
+
+export default DataFetchingComponent;
