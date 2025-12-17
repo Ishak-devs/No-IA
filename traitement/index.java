@@ -1,4 +1,5 @@
-
-class Main {
-    var = 'hello from java';
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Happy New Year 2026");
+    }
 }
